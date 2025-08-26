@@ -34,6 +34,7 @@ pipeline {
                 else
                 echo "no not available"
                 fi
+                npm test
 
                 '''
             }
