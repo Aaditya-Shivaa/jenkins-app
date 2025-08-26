@@ -26,6 +26,12 @@ pipeline {
             }
         }
         stage('test'){
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
             steps{
                 sh '''
                 ls -la
@@ -34,7 +40,7 @@ pipeline {
                 else
                 echo "no not available"
                 fi
-                npm test
+                npm test 
 
                 '''
             }
