@@ -29,10 +29,12 @@ pipeline {
             steps{
                 sh '''
                 ls -la
-                if find build -name "index.html" then
+                if find build -name "index.html" | grep -q .; then
                 echo "yes available"
                 else
-                ech "no not available"
+                echo "no not available"
+                fi
+
                 '''
             }
         }
