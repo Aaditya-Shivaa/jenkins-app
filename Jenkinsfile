@@ -25,5 +25,16 @@ pipeline {
                 '''
             }
         }
+        stage('test'){
+            steps{
+                sh '''
+                ls -la
+                if find build -name "index.html" then
+                echo "yes available"
+                else
+                ech "no not available"
+                '''
+            }
+        }
     }
 }
