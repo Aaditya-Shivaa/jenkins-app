@@ -20,7 +20,7 @@ pipeline {
             }
             steps{
                 sh '''
-                echo 'chnge'
+                echo 'chnged'
                 ls -la
                 npm --version
                 node --version
