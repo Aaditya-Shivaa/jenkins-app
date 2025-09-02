@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment{
+        PROJECT_ID = 'c58df395-9a51-46fc-8a9f-900ad7f79764'
+    }
+
     stages {
         stage('Hello') {
             steps {
@@ -16,6 +20,7 @@ pipeline {
             }
             steps{
                 sh '''
+                echo 'chnge'
                 ls -la
                 npm --version
                 node --version
