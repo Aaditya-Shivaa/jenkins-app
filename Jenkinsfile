@@ -52,7 +52,9 @@ pipeline {
             }
         }
         stage('Approval'){
-            input 'Ready?'
+            steps{
+                input 'Ready?'
+            }
         }
 
         stage('Deploy'){
