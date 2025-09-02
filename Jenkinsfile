@@ -30,6 +30,11 @@ pipeline {
                 '''
             }
         }
+        stage('Staging'){
+            steps{
+                echo 'Staging env'
+            }
+        }
         stage('test'){
             agent{
                 docker{
