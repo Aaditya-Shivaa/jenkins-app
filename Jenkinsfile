@@ -6,11 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Hello world') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+
         stage('Build'){
             agent{
                 docker{
@@ -54,6 +50,13 @@ pipeline {
 
                 '''
             }
+        }
+        stage('Approval'){
+            input 'Ready for Deployment?'
+        }
+
+        stage('Deploy'){
+            echo 'Deployed'
         }
     }
 }
